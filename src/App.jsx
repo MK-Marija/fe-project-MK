@@ -1,6 +1,4 @@
 import { useState } from 'react'
-
-
 import './App.css'
 import Articles from './components/Articles'
 
