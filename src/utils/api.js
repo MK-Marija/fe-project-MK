@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 const newsApi = axios.create({
     baseURL: 'https://oneproject-mk.onrender.com/api'
   });
@@ -19,4 +17,10 @@ const newsApi = axios.create({
     })
    }
 
-   
+
+ export const getComments = (article_id) => {
+    
+    return newsApi.get(`/articles/${article_id}/comments`).then((response) => {
+    return response.data.comments
+    })
+   }
