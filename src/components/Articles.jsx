@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import {Link} from "react-router-dom"
 import { getArticles } from "../utils/api";
 import Loading from "./Loading";
 import ArticlesCard from "./ArticlesCard";
+
 
 
 const Articles = () => {
@@ -12,12 +13,10 @@ const Articles = () => {
 
   useEffect(() => {
    getArticles().then((articles) => {
-        console.log(articles);
       setArticles(articles);
       setLoading(false)
     })
     .catch((error)=> {
-        console.log("Loading error", error)
     setLoading(false)
     })
 
@@ -31,7 +30,12 @@ const Articles = () => {
     <div className="body">
       <h1>Articles</h1>
       {articles.map((article) => {
-         return <ArticlesCard article={article} key={article.article_id} />
+        return (
+        <div key={article.article_id}>
+          <ArticlesCard article={article} /> 
+         <Link to={`/articles/${article.article_id}`}>Continue reading...</Link>
+         </div>
+        )
       })}
 </div>         
    
