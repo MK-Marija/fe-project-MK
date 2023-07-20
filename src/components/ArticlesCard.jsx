@@ -12,9 +12,8 @@ const ArticlesCard = ({article}) => {
         <p> {article.body}</p>
         <p>{article.created_at}</p>
         <p> {article.votes}</p>
-        <img className="img" src={article.article_img_url} alt="Article Image"
-        />
-      </div>
+        <img className="img" src={article.article_img_url} alt="Article Image"/>
+       </div>
       
     );
 }
