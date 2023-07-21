@@ -5,6 +5,7 @@ import Articles from './components/Articles'
 import SingleArticle from './components/SingleArticle'
 import Home from './components/Home'
 import Header from './components/Header'
+import Comments from './components/Comments';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/articles" element={<Articles/>}/>
       <Route path="/articles/:article_id" element={<SingleArticle/>}/>
+      {/* <Route path="/articles/:article_id/comments" element={<Comments/>}/> */}
       </Routes>
     </>
   )

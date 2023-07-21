@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getArticle } from "../utils/api";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -36,6 +37,7 @@ const SingleArticle = () => {
         <p>{article.votes}</p>
         <img className="img" src={article.article_img_url} alt="Article Image" />
         </div>
+        <Comments/>
         </div>
        )
 };
